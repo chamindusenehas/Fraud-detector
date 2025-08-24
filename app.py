@@ -30,33 +30,6 @@ roc_auc = 0.9950
 st.set_page_config(page_title="Fraud Detection Dashboard", page_icon=":shield:", layout="wide")
 
 
-# st.markdown("""
-#     <style>
-#     .stButton > button {
-#         border: 2px solid #ff0022;
-#         border-radius: 8px;
-#     }
-#     .stButton > button:hover {
-#         background-color: #ff0022;
-#         color: #011627;
-#     }
-#     .stExpander {
-#         border: 1px solid #0d2538;
-#         border-radius: 8px;
-#     }
-#     .footer {
-#         position: fixed;
-#         bottom: 0;
-#         width: 100%;
-#         background-color: #011627;
-#         color: #fdfffc;
-#         text-align: center;
-#         padding: 10px;
-#     }
-#     </style>
-#     """, unsafe_allow_html=True)
-
-
 st.title("Fraud Detection Dashboard")
 
 
@@ -154,9 +127,9 @@ elif page == "Predict Fraud":
 
                 st.success(f"Prediction: {'Fraud' if prediction == 1 else 'Not Fraud'}")
                 st.metric("Fraud Probability", f"{prediction_proba:.4f}")
-                st.progress(prediction_proba)
+                st.progress(int(prediction_proba))
             except ValueError as e:
                 st.error(f"Error: {e}. Please check input formats.")
 
 
-st.markdown('<div class="footer">Dashboard Updated: August 10, 2025</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer">Dashboard Updated: August 24, 2025</div>', unsafe_allow_html=True)
